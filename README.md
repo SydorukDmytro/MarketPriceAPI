@@ -110,7 +110,7 @@ https://localhost:8080/api/asset?provider=oanda&kind=forex
 ]
 ```
 
-### Реальні ціни
+### Реальні ціни по активу
 
 https://localhost:8080/api/realtimeprices
 Параметри:
@@ -133,6 +133,56 @@ https://localhost:8080/api/realtimeprices?instrumentId=63d4a5b6-351f-41a0-969f-6
     "timestamp": "2025-07-08T01:22:48.768578"
 }
 ```
+
+### Усі реальні ціни по всіх активах
+#### Приклад запиту:
+https://localhost:8080/api/realtimeprices/latest
+#### Відповідь:
+```json
+[
+    {
+        "id": "74c21f28-96f6-48ef-8efd-20aace5824df",
+        "instrumentId": "054dc5aa-7d4e-45b5-abea-11cb24823ce4",
+        "bid": 0.0,
+        "ask": 95.0,
+        "last": 0.0,
+        "symbol": "CAD/JPY",
+        "description": "CAD/JPY",
+        "timestamp": "2025-07-08T07:47:15.781811"
+    },
+    {
+        "id": "e225c1c6-f0bd-427a-b861-15cfb18d0035",
+        "instrumentId": "2577b783-2169-4105-ab31-0d5f72ac92e6",
+        "bid": 0.0,
+        "ask": 0.0,
+        "last": 206.15,
+        "symbol": "ABC",
+        "description": "AmerisourceBergen",
+        "timestamp": "2025-07-08T07:47:15.6460966"
+    },
+    {
+        "id": "efb58758-f1a4-4af1-8ed3-8e76426cf638",
+        "instrumentId": "63d4a5b6-351f-41a0-969f-6e5bfcd32fcd",
+        "bid": 0.0,
+        "ask": 0.0,
+        "last": 0.7545,
+        "symbol": "CAD/CHF",
+        "description": "CAD/CHF",
+        "timestamp": "2025-07-08T07:47:15.7210854"
+    },
+    {
+        "id": "3f99f1dd-d7f2-45e3-9d07-9106ad514983",
+        "instrumentId": "63e9ee30-8391-48f6-b135-bcd651515f8a",
+        "bid": 144.03,
+        "ask": 0.0,
+        "last": 0.0,
+        "symbol": "A",
+        "description": "Agilent Technologies",
+        "timestamp": "2025-07-08T07:47:15.620376"
+    },
+    ...
+```
+
 
 ### Історичні ціни
 GET /api/historicalPrices/latest-bars — отримати останні історичні бари

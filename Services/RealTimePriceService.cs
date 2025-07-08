@@ -21,5 +21,13 @@ namespace MarketPriceAPI.Services
                 .OrderByDescending(r => r.Timestamp)
                 .FirstOrDefaultAsync();
         }
+
+        public async Task<IEnumerable<RealTimePriceSnapshot>> GetLatestPricesForAllAsync()
+        {
+            return await _dbContext.RealTimePriceSnapshots
+                .GroupBy(x => x.instrumentId)
+                .Select(g => g.OrderByDescending(x => x.Timestamp).First())
+                .ToListAsync();
+        }
     }
 }

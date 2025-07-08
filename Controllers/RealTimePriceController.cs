@@ -28,5 +28,12 @@ namespace MarketPriceAPI.Controllers
 
             return Ok(priceSnapshot);
         }
+
+        [HttpGet("latest")]
+        public async Task<IActionResult> GetAllLatestPrices()
+        {
+            var snapshots = await _realTimePriceService.GetLatestPricesForAllAsync();
+            return Ok(snapshots);
+        }
     }
 }

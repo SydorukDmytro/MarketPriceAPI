@@ -1,0 +1,6 @@
+@MarketPriceAPI_HostAddress = http://localhost:5044
+
+GET {{MarketPriceAPI_HostAddress}}
+Accept: application/json
+
+###
